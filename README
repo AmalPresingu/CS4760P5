@@ -1,0 +1,24 @@
+Author  : Amal Presingu
+Date    : 11/8/2022
+CS4760  : Project 5
+
+HOW TO RUN
+----------
+1. Run the make command
+2. Run oss executable: ./oss
+3. Inspect log files & screen for results
+4. Run make clean
+
+COMMANDS 
+-------------------
+./oss 				
+
+
+
+Version Control
+---------------
+The .git subdirectory can be found by running ls -la in the directory.
+GitHub Repo: https://github.com/AmalPresingu/CS4760P5
+
+ISSUES/CHANGES
+--------------
