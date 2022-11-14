@@ -625,7 +625,7 @@ void write_pkt(int status,int id){
     }
  }
 
-
+//queue handling
 void handleQueue(){
     while(isEmpty(&wait_q)!=TRUE){
         int pid = wait_q->pid;
@@ -862,6 +862,7 @@ int main(int argc, char ** argv){
     signal(SIGTERM,signalHandleterminate);
     signal(SIGUSR1,signalHandleUsr1);
     signal(SIGALRM, signalHandleAlarm);
+    signal(SIGCHLD,signalHandleUsr1);
 
     // RESET SEM
     semLock.sem_num=0;

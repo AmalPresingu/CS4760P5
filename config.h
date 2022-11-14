@@ -11,12 +11,12 @@
 #include <sys/ipc.h>
 #include <sys/sem.h>
 #include <sys/msg.h>
+#include <limits.h>
 
 #ifndef _CONFIG_H
 #define _CONFIG_H
 
-#include <limits.h>
-
+// ulimit -a
 #define MAX_PROCESSES 20
 #define HELP_STATEMENT "USAGE\n---------\n./oss 				Forks user process randomly between 1 and 5 seconds\n./oss -h			Prints usage\n./oss -v [0 | 1]		0 for non-verbose mode | 1 for verbose mode\n"
 #define MAX_PROCESS_IN_SYSTEM 18

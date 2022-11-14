@@ -1,5 +1,5 @@
 Author  : Amal Presingu
-Date    : 11/8/2022
+Date    : 11/14/2022
 CS4760  : Project 5
 
 HOW TO RUN
@@ -23,5 +23,8 @@ GitHub Repo: https://github.com/AmalPresingu/CS4760P5
 
 ISSUES/CHANGES
 --------------
-Currently runs with 20 max processes instead of 40. Was getting a "resource temporarily unavailable"
-message when trying to create new processes. Should be working accordingly though. 
+- Currently runs with 20 max processes instead of 40. Was getting a "resource temporarily unavailable"
+  message when trying to create new processes. Should be working accordingly though. When I ran ulimit, my 
+  max user processes was set to 30. Not sure if this has anything to do with the issue. 
+  
+- Added -v parameter to toggle verbose on and off.
