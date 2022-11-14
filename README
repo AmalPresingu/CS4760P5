@@ -5,14 +5,15 @@ CS4760  : Project 5
 HOW TO RUN
 ----------
 1. Run the make command
-2. Run oss executable: ./oss
-3. Inspect log files & screen for results
+2. Run oss executable: ./oss -h for usage
+3. Inspect log files for results
 4. Run make clean
 
 COMMANDS 
 -------------------
-./oss 				
-
+./oss 				Forks user process randomly between 1 and 5 seconds
+./oss -h			Prints usage
+./oss -v [0 | 1]	0 for non-verbose mode | 1 for verbose mode		
 
 
 Version Control
@@ -22,3 +23,5 @@ GitHub Repo: https://github.com/AmalPresingu/CS4760P5
 
 ISSUES/CHANGES
 --------------
+Currently runs with 20 max processes instead of 40. Was getting a "resource temporarily unavailable"
+message when trying to create new processes. Should be working accordingly though. 

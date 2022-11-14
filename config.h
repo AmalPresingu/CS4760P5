@@ -11,15 +11,14 @@
 #include <sys/ipc.h>
 #include <sys/sem.h>
 #include <sys/msg.h>
-#include "globals.h"
 
-#ifndef _GLOBALS_H
-#define _GLOBALS_H
+#ifndef _CONFIG_H
+#define _CONFIG_H
 
 #include <limits.h>
 
-#define MAX_PROCESSES 40
-#define HELP_STATEMENT "HOW TO USE: [-h -s]\n-h for help\n-s <timeout time>\n"
+#define MAX_PROCESSES 20
+#define HELP_STATEMENT "USAGE\n---------\n./oss 				Forks user process randomly between 1 and 5 seconds\n./oss -h			Prints usage\n./oss -v [0 | 1]		0 for non-verbose mode | 1 for verbose mode\n"
 #define MAX_PROCESS_IN_SYSTEM 18
 #define MAX_LINE_IN_LOG_FILE 10000
 #define TERMINATION_PROB 0.30
@@ -39,7 +38,7 @@ const int CLOCK_INC_SEC = 1;
 const int MAX_CLOCK_INC_NSEC = 1000;
 
 enum resource_type {EXCLUSIVE,SHARED};
-enum request_state {request,allocation,release,none};
+enum request_state {request,release,none};
 enum recvType {WAIT,NOWAIT};
 
 struct sembuf semLock, semRelease;
@@ -62,11 +61,6 @@ struct request_packet{
     enum request_state type[MAX_RESOURCE_COUNT];
 };
 
-// struct msg_pkt {
-//     int req_pkt_id;
-//     int process_id;
-// };
-
 struct send_pkt{
     long int mtype;
     int req_pkt_id;
@@ -79,13 +73,13 @@ struct recv_pkt{
 
 
 key_t lc_key = 1234;
-key_t need_table_key = 1345;
 key_t sem_clock_key = 1545;
 key_t res_des_key_st = 1645; // 1645 + 20 = 1665
 key_t msgQ_key = 1745;
 key_t request_packet_key_st = 4300; // 4300 + 18 = 4318
 key_t request_packet_msgQ_key = 4321; // 4323
 key_t recv_msgQ_key_st = 4323; // 4323 + 18 = 4341
-key_t sem_process_key_st = 4423; // 4223 + 28 = 4261
+key_t sem_process_key_st = 4423; // 4423 + 28 = 4461
+key_t max_required_table_key = 5000;
 
 #endif
